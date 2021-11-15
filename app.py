@@ -153,7 +153,7 @@ def event_handle(event):
             replyObj = TextSendMessage(text="คุยกับคุณอะ")
         elif msg == "สวัสดี" :
             replyObj = TextSendMessage(text="เออ....หวัดดีเว้ย")
-        elig msg == "กี่โมงเเล้ว" :
+        elif msg == "กี่โมงเเล้ว" :
             replyObj = TextSendMessage(text="เท่าเมื่อวานอะ")
         else :
             replyObj = TextSendMessage(text="ไม่รู้อะ")
