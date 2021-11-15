@@ -154,9 +154,9 @@ def event_handle(event):
         elif msg == "สวัสดี" :
             replyObj = TextSendMessage(text="เออ....หวัดดีเว้ย")
         elif msg == "กี่โมงเเล้ว" :
-            replyObj = TextSendMessage(text="เท่าเมื่อวานอะ")
+            replyObj = TextSendMessage(text="เท่าเมื่อวานอะ...")
         else :
-            replyObj = TextSendMessage(text="ไม่รู้อะ")
+            replyObj = TextSendMessage(text="msg")
         line_bot_api.reply_message(rtoken, replyObj)
     elif msgType == "image":
         try:
