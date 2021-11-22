@@ -162,8 +162,9 @@ def event_handle(event):
             headers = request.headers
             json_headers = ({k:v for k, v in headers.items()})
             json_headers.update({'Host':'bots.dialogflow.com'})
-            url = "https://bots.dialogflow.com/line/8e9fa246-089e-4151-a394-92ccd2da97cc/webhook""
+            url = ""
             requests.post(url,data=json_line, headers=json_headers)
+      elif msgType == "image": 
         try:
             message_content = line_bot_api.get_message_content(event['message']['id'])
             i = Image.open(BytesIO(message_content.content))
