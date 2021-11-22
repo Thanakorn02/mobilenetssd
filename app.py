@@ -159,9 +159,11 @@ def event_handle(event):
             replyObj = TextSendMessage(text="กินเเล้วครับ")
             line_bot_api.reply_message(rtoken, replyObj)
         else :
-            replyObj = TextSendMessage(text=msg)
-            line_bot_api.reply_message(rtoken, replyObj)
-    elif msgType == "image":
+            headers = request.headers
+            json_headers = ({k:v for k, v in headers.items()})
+            json_headers.update({'Host':'bots.dialogflow.com'})
+            url = "https://dialogflow.cloud.google.com/v1/integrations/line/webhook/8e9fa246-089e-4151-a394-92ccd2da97cc"
+            requests.post(url,data=json_line, headers=json_headers)
         try:
             message_content = line_bot_api.get_message_content(event['message']['id'])
             i = Image.open(BytesIO(message_content.content))
